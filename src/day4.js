@@ -6,7 +6,6 @@ const inputArray = fileData.split("\n");
 const randomNumbers = inputArray[0].split(",");
 
 let originalBoards = _prepare2DArray(inputArray);
-console.log("No of boards", originalBoards.length);
 
 let startTime = Date.now();
 part1();
@@ -74,21 +73,16 @@ function part2(){
     do {
         
         const randomNumber = randomNumbers[index];
-        console.log("---------------------");
-        console.log("Number to replace", randomNumber);
         
         b1 = boards.map((board)=>{
             return _markNumberOnBoard(board, randomNumber);
         });
 
         boards = b1;
-        //console.log(boards);
 
         winningBoards = [];
         winningBoardsIndex = _logWinnerBoards(boards);
         
-        console.log(`Winning boards after ${index}:`, winningBoardsIndex);
-
         for (let wbi = 0; wbi < winningBoardsIndex.length; wbi++) {
             const bi = winningBoardsIndex[wbi];
             winningBoards.push(boards[bi]);            
@@ -102,13 +96,8 @@ function part2(){
             }
         });
 
-        console.log(`${winningBoardsIndex.length} are won in this round. ${boards.length} left to win.`);
-
         if(boards.length == 0){
-            //console.log(`Winning boards after ${index}:`, winningBoards);
             console.log(`Number ${randomNumbers[index]} at index ${index} created last winner`);
-            console.log("Last winner board", winningBoards);
-            console.log("Remaining boards to win", boards);
             break;
         }
         else{
@@ -119,8 +108,6 @@ function part2(){
 
     boardSum = _boardSum(winningBoards[0]);
     //boardSum = _boardSum(boards[0]);
-    console.log("Board sum:", boardSum);
-    console.log("Last number:", randomNumbers[index]);
     console.log("P2 answer: ", boardSum * randomNumbers[index]);
 
     console.log("________ End of Part 2 ________");

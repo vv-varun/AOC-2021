@@ -37,10 +37,6 @@ function part2(){
 
     let lowPoints = _getLowPoints();
     
-    //console.log("Low points", lowPoints);
-    //let basin = _getBasinForPoint(lowPoints[3]);
-    //console.log(`Basin for points (${lowPoints[3].point.index},${lowPoints[3].point.pos}) is: `, basin);
-
     let basinArray = lowPoints.map(point=> {
         return {point: point, basin: _getBasinForPoint(point)};
     });
@@ -48,10 +44,6 @@ function part2(){
     basinArray.sort((b1,b2)=>{
         return b2.basin.length - b1.basin.length;
     });
-
-    //console.log("B1 basin:", basinArray[0]);
-    //console.log("B2 basin:", basinArray[1]);
-    //console.log("B3 basin:", basinArray[2]);
 
     let b1 = basinArray[0].basin.length;
     let b2 = basinArray[1].basin.length;

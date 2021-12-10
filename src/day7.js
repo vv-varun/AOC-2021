@@ -14,7 +14,7 @@ part2();
 endTime = Date.now();
 console.log(`${endTime - startTime} milliseconds to complete Part 2`);
 
-test()
+//test()
 
 function part1(){
 

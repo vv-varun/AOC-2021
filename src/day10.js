@@ -11,8 +11,6 @@ const bracketMap = {
     '<':'>','>':'<'
 };
 
-//test()
-
 let startTime = Date.now();
 part1();
 let endTime = Date.now();
@@ -77,24 +75,6 @@ function part2(){
     console.log("Part 2", midSum);
     
     console.log("________ End of Part 2 ________");
-}
-
-function test(){
-
-    //*/
-    //let line = '{([(<{}[<>[]}>{[]{[(<()>';
-    let line = '[[<[([]))<([[{}[[()]]]';
-    console.log(_analyzeSyntax(line));
-    //*/
-
-    /*/
-    //let line = '[({(<(())[]>[[{[]{<()<>>';    //  }}]])})]
-    let line = '[(()[<>])]({[<{<<[]>>(';        //  )}>]})
-    let openSyntax = _analyzeSyntax(line).stack;
-    openSyntax.reverse();
-    let closeSyntax = openSyntax.map(s=>{return bracketMap[s]});
-    console.log("Closing syntax:", closeSyntax.join(''));
-    //*/
 }
 
 function _analyzeSyntax(line){

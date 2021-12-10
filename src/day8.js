@@ -1,5 +1,4 @@
 const fs = require('fs');
-const { removeAllListeners } = require('process');
 
 const fileData = fs.readFileSync('./inputFiles/day8.txt', 'utf8');
 const inputArray = fileData.split("\n");
@@ -14,29 +13,15 @@ const input = inputArray.map(v=>{
 const wires = 'abcdefg';
 const combinations = _getCombinations(wires);
 
-//const correctMapping = ['','','','','','','','','',''];
-const correctMapping = {
-    '':0,
-    '':1,
-    '':2,
-    '':3,
-    '':4,
-    '':5,
-    '':6,
-    '':7,
-    '':8,
-    '':9
-}
 //console.log(input);
 
 
 let startTime = Date.now();
-//part1();
+part1();
 let endTime = Date.now();
 console.log(`${endTime - startTime} milliseconds to complete Part 1`);
 
 startTime = Date.now();
-//test()
 part2();
 endTime = Date.now();
 console.log(`${endTime - startTime} milliseconds to complete Part 2`);

@@ -30,7 +30,6 @@ function part1(){
         elipson = elipson + (mainBitAtIndex === '1'? '0': '1');
     }
 
-    console.log(gamma); console.log(elipson);
     let n1 = parseInt(gamma, 2);
     let n2 = parseInt(elipson,2);
     console.log("N1", n1); console.log("N2", n2);
@@ -63,10 +62,7 @@ function part2(){
 
     } while (itemsRemaining > 1);
 
-    console.log("Oxygen", newArray);
     let n1 = parseInt(newArray[0], 2);
-    
-
 
     newArray = inputArray.slice();
     itemsRemaining = newArray.length;
@@ -77,9 +73,6 @@ function part2(){
         let bitAtIndex = _getMainBitAtIndex(newArray, counter);
         bitAtIndex = bitAtIndex === '1'? '0': '1'; // Inverse the main bit
 
-        //console.log(`Length of array ${itemsRemaining}`);
-        //console.log(`Low bit at index ${counter} is ${bitAtIndex}`);
-
         filteredList = newArray.filter((v)=> {
             if(v.charAt(counter) === bitAtIndex){return v};
         });
@@ -89,8 +82,6 @@ function part2(){
         counter = counter + 1;
 
     } while (itemsRemaining > 1);
-
-    console.log("CO2", newArray);
 
     let n2 = parseInt(newArray[0], 2);
     console.log("N1", n1); console.log("N2", n2);
