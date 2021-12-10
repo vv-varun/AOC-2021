@@ -1,0 +1,16 @@
+{
+  "name": "aoc-2021",
+  "version": "0.0.1",
+  "description": "AOC 2021 Solutions in Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Varun Verma",
+  "license": "ISC",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "crypto-js": "^4.1.1"
+  }
+}
