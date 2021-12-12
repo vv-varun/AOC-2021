@@ -5,6 +5,15 @@ I was introduced to [Advent of Code](https://adventofcode.com) challenge by my c
 
 I thought of documenting my solutions..
 
+## Build & Run
+No build required. Just run directly.
+
+To run : `node index.js <day>`
+
+For e.g. to run the Day1 puzzle.. run the command: `node index.js day1`
+
+Alternatively, you could also simply run : `node day1/day1.js`
+
 ## Why JavaScript
 Just like that. 
 

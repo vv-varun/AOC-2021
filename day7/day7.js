@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const fileData = fs.readFileSync('./inputFiles/day7.txt', 'utf8');
+const fileData = fs.readFileSync(__dirname + '/input.txt', 'utf8');
 const inputArray = fileData.split(",").map((v)=>{return Number(v)});
 //console.log(inputArray);
 

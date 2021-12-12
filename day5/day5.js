@@ -1,7 +1,7 @@
 const fs = require('fs');
 const { isAbsolute } = require('path');
 
-const fileData = fs.readFileSync('./inputFiles/day5.txt', 'utf8');
+const fileData = fs.readFileSync(__dirname + '/input.txt', 'utf8');
 const inputArray = fileData.split("\n");
 //console.log(inputArray);
 let lines = _preareLines(inputArray);

@@ -2,7 +2,7 @@ const { count } = require('console');
 const fs = require('fs');
 const { isAbsolute } = require('path');
 
-const fileData = fs.readFileSync('./inputFiles/day6.txt', 'utf8');
+const fileData = fs.readFileSync(__dirname + '/input.txt', 'utf8');
 const inputArray = fileData.split(",");
 //console.log(inputArray);
 

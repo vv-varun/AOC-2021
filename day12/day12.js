@@ -2,7 +2,7 @@ const { triggerAsyncId } = require('async_hooks');
 const fs = require('fs');
 const path = require('path');
 
-const fileData = fs.readFileSync('./inputFiles/day12.txt', 'utf8');
+const fileData = fs.readFileSync(__dirname + '/input.txt', 'utf8');
 const inputArray = fileData.split("\n");
 const pathSegments = _preparePathSegments(inputArray);
 //console.log(pathSegments);
