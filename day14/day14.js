@@ -1,5 +1,4 @@
 const fs = require('fs');
-const { start } = require('repl');
 
 const fileData = fs.readFileSync(__dirname + '/input.txt', 'utf8');
 const inputArray = fileData.split("\n");
@@ -67,14 +66,11 @@ function part2(){
 
     console.log("====== Part 2 =======");
 
-    let counts = _countPolymer(startPolymer);
-    let pairCounts = _countPairs(startPolymer);
-
+    let pairCounts = newPairCounts = _countPairs(startPolymer);
     let counter = 0;
 
     do {
 
-        let newPairCounts = pairCounts;
         for (const [key, value] of Object.entries(pairCounts)) {
             
             let substitute = substitutions[key];
@@ -100,22 +96,18 @@ function part2(){
 
     //console.log("Pair Counts:",pairCounts);
 
-    counts = {};
-    Object.keys(pairCounts).forEach((key,index)=>{
+    let counts = {};
+    Object.keys(pairCounts).forEach((key)=>{
 
         let value = pairCounts[key];
         
-        let element = key[1];
+        let element = key[0];
         counts[element] = counts[element]? counts[element]+value : value;
         
-        element = key[0];
+        element = key[1];
         counts[element] = counts[element]? counts[element]+value : value;
-        
-        if(index === 0){    
-        }
         
         //let c= Object.keys(counts).map((key) => {return {key: key, count:counts[key]}}); console.log(`checking for ${key}`, c);
-
     });
     
     counts = Object.keys(counts).map((key) => {return {key: key, count:Math.ceil(counts[key]/2)}});
@@ -128,35 +120,6 @@ function part2(){
     console.log("Part 2: ", (max.count - min.count));
     
     console.log("________ End of Part 2 ________");
-}
-
-function _substitutePairs(pairs, counts, times){
-
-    console.log(`Size to evaluate`, pairs.length);
-    let counter = 0;
-
-    do {
-
-        let newPairs = [];
-        pairs.forEach(pair => {
-                
-            let substitute = substitutions[pair];
-            newPairs.push(pair[0] + substitute);
-            newPairs.push(substitute + pair[1]);
-
-            counts[substitute] = counts[substitute]? counts[substitute]+1 : 1;
-
-        });
-
-        pairs = newPairs;
-        counter++;
-
-    }while(counter < times);
-    
-    return {
-        pairs: pairs,
-        counts: counts
-    };
 }
 
 function _countPolymer(polymer){
